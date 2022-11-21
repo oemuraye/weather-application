@@ -10,8 +10,8 @@ const geocode = (address, callback) => {
 
   request({ url, json: true }, (error, {body}) => {
     if (error) {
-      // callback('Unable to connect to location service', undefined);
-      callback(chalk.red("Unable to connect to location service"));
+      callback('Unable to connect to location service', undefined);
+      // callback(chalk.red("Unable to connect to location service"));
     } else if (body.features.length === 0) {
       callback("Unable to find location. Try another search", undefined);
     } else {
